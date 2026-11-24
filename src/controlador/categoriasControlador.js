@@ -157,6 +157,11 @@ class CategoriasControlador {
                     mensaje: 'No se puede eliminar: hay productos asociados a esta categoría'
                 });
             }
+            console.error('Error en eliminarCategoria:', error);
+            return res.status(500).json({
+                exito: false,
+                mensaje: 'Error al eliminar la categoría'
+                });
 
             return res.status(500).json({
                 exito: false,
